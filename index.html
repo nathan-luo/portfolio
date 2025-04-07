@@ -8,9 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@500&family=Roboto:wght@500&family=Oswald:wght@500&family=Poppins:wght@500&family=Raleway:wght@500&family=Ubuntu:wght@500&family=Merriweather:wght@700&family=Lora:wght@500&family=Source+Sans+3:wght@500&family=Rubik:wght@500&display=swap"
-        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,7 +17,7 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: #000000;
             height: 100vh;
             display: flex;
@@ -29,263 +26,87 @@
             padding: 20px;
         }
 
-        .container {
-            text-align: center;
-            max-width: 100%;
+        .card {
+            background-color: #ffffff;
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            padding: 25px 30px;
+            width: 360px;
+            max-width: 90vw;
+            text-align: left;
         }
 
         h1 {
-            font-size: 5rem;
+            font-size: 1.6rem;
             font-weight: 500;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Glitch effect classes */
-        .glitch-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch-text {
-            position: relative;
-            display: inline-block;
-        }
-
-        .glitch-text::before,
-        .glitch-text::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-        }
-
-        .glitch-text.active::before {
-            left: -2px;
-            text-shadow: -1px 0 #ff0000;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-1 0.2s linear;
-            opacity: 0.8;
-        }
-
-        .glitch-text.active::after {
-            left: 2px;
-            text-shadow: 1px 0 #0000ff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim-2 0.1s linear;
-            opacity: 0.8;
-        }
-
-        @keyframes glitch-anim-1 {
-            0% {
-                clip: rect(12px, 450px, 76px, 0);
-            }
-
-            20% {
-                clip: rect(42px, 450px, 96px, 0);
-            }
-
-            40% {
-                clip: rect(22px, 450px, 46px, 0);
-            }
-
-            60% {
-                clip: rect(52px, 450px, 56px, 0);
-            }
-
-            80% {
-                clip: rect(12px, 450px, 76px, 0);
-            }
-
-            100% {
-                clip: rect(42px, 450px, 46px, 0);
-            }
-        }
-
-        @keyframes glitch-anim-2 {
-            0% {
-                clip: rect(52px, 450px, 76px, 0);
-            }
-
-            20% {
-                clip: rect(22px, 450px, 66px, 0);
-            }
-
-            40% {
-                clip: rect(32px, 450px, 86px, 0);
-            }
-
-            60% {
-                clip: rect(12px, 450px, 96px, 0);
-            }
-
-            80% {
-                clip: rect(42px, 450px, 46px, 0);
-            }
-
-            100% {
-                clip: rect(32px, 450px, 86px, 0);
-            }
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 300;
-            margin-bottom: 2rem;
-            color: #333;
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 1.2rem 0;
         }
 
         .links {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
+            justify-content: space-between;
+            gap: 0.8rem;
+            flex-wrap: wrap;
         }
 
         .link {
             color: #000;
-            text-decoration: none;
-            font-size: 1rem;
+            text-decoration-color: #000;
+            text-decoration: underline;
+            font-size: 0.85rem;
             font-weight: 400;
             transition: opacity 0.2s ease;
-            border-bottom: 1px solid #000;
-            padding-bottom: 2px;
+            opacity: 0.7;
         }
 
         .link:hover {
-            opacity: 0.6;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.5rem 0;
-            background-color: #ffffff;
+            opacity: 1;
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
+            .card {
+                padding: 20px 15px;
             }
 
-            p {
-                font-size: 1rem;
+            h1 {
+                font-size: 1.5rem;
             }
 
             .links {
-                flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1 id="title" class="glitch-text" data-text="Nathan Luo">Nathan Luo</h1>
-        <!-- <p>Interested in Cognitive Science and AI.</p> -->
-    </div>
-    <footer class="footer">
+    <div class="card">
+        <h1>Nathan Luo</h1>
+        <p>AI Masters Student @ Unimelb</p>
+        <div class="divider"></div>
         <div class="links">
             <a href="https://notes.nathanluo.com" class="link">Notes</a>
-            <a href="https://x.com/th_rt_en" class="link">X</a>
+            <a href="https://twitter.com/yourusername" class="link">X</a>
             <a href="https://www.linkedin.com/in/ntluo" class="link">LinkedIn</a>
-            <a href="https://github.com/nathan-luo" class="link">GitHub</a>
+            <a href="https://github.com/ntluo" class="link">GitHub</a>
             <a href="mailto:nathanluo13@gmail.com" class="link">Email</a>
         </div>
-    </footer>
-
-    <script>
-        // Font style animation for title
-        const title = document.getElementById('title');
-        const fontStyles = [
-            { font: "'Space Grotesk', sans-serif", weight: '300', transform: 'none' },
-            { font: "'Montserrat', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Playfair Display', serif", weight: '500', transform: 'none' },
-            { font: "'Roboto', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Oswald', sans-serif", weight: '500', transform: 'scale(1.02)' },
-            { font: "'Poppins', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Raleway', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Ubuntu', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Merriweather', serif", weight: '700', transform: 'none' },
-            { font: "'Lora', serif", weight: '500', transform: 'none' },
-            { font: "'Source Sans 3', sans-serif", weight: '500', transform: 'none' },
-            { font: "'Rubik', sans-serif", weight: '500', transform: 'scale(1.02)' }
-        ];
-
-        let currentStyleIndex = 0;
-
-        // Glitch characters function
-        function glitchText(text) {
-            // Characters that might appear in a glitch
-            const glitchChars = '!<>-_\\/[]{}—=+*^?#________';
-
-            // Randomly replace some characters with glitch chars
-            let result = '';
-            for (let i = 0; i < text.length; i++) {
-                if (Math.random() < 0.15) { // 15% chance of glitching a character
-                    result += glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                } else {
-                    result += text[i];
-                }
-            }
-            return result;
-        }
-
-        function changeFont() {
-            const currentStyle = fontStyles[currentStyleIndex];
-
-            // Apply the font style
-            title.style.fontFamily = currentStyle.font;
-            title.style.fontWeight = currentStyle.weight;
-            title.style.fontStyle = 'normal'; // No italics
-            title.style.transform = currentStyle.transform;
-
-            // Randomly apply various glitch effects
-            if (Math.random() < 0.3) { // 30% chance of activating glitch effect
-                // Update the data-text attribute (for the ::before and ::after pseudo-elements)
-                title.setAttribute('data-text', title.textContent);
-
-                // Apply the active class to trigger CSS animations
-                title.classList.add('active');
-
-                // Randomly skew or shift the text
-                if (Math.random() < 0.5) {
-                    const skewX = (Math.random() * 10 - 5) + 'deg';
-                    const skewY = (Math.random() * 5 - 2.5) + 'deg';
-                    title.style.transform = `skew(${skewX}, ${skewY}) ${currentStyle.transform}`;
-                }
-
-                // Occasionally change the text content to glitched version
-                if (Math.random() < 0.15) {
-                    const originalText = "Nathan Luo";
-                    title.textContent = glitchText(originalText);
-
-                    // Reset after a brief moment
-                    setTimeout(() => {
-                        title.textContent = originalText;
-                    }, 50);
-                }
-
-                // Remove the active class after a short time
-                setTimeout(() => {
-                    title.classList.remove('active');
-                }, 100);
-            }
-
-            // Move to next style in the array
-            currentStyleIndex = (currentStyleIndex + 1) % fontStyles.length;
-        }
-
-        // Change font style every second
-        setInterval(changeFont, 100);
-    </script>
+    </div>
 </body>
 
 </html>
